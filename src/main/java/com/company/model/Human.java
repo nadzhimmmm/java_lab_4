@@ -1,6 +1,7 @@
 package com.company.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * A class that stores information about a person
@@ -69,5 +70,27 @@ public class Human {
                 ", division: " + division +
                 ", salary: "  + salary +
                 '}';
+    }
+
+    /**
+     * Redefined method equals
+     * @param o the object being compared
+     * @return true if equal, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return id == human.id && Double.compare(human.salary, salary) == 0 && Objects.equals(name, human.name) && Objects.equals(male, human.male) && Objects.equals(birthDate, human.birthDate) && Objects.equals(division, human.division);
+    }
+
+    /**
+     * Redefined method hashCode
+     * @return hashCode
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, male, birthDate, division, salary);
     }
 }
