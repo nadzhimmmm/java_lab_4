@@ -29,7 +29,7 @@ public class Main {
         }
         int quit = in.nextInt();
         while (quit<0||quit>2) {
-            System.out.println("Ошибка. Введите число 0 или 1.");
+            System.out.println("Ошибка. Введите число от нуля до двух.");
             while (!in.hasNextInt()) {
                 System.out.println("Ошибка. Неверный ввод. Введите целое число.");
                 in.next();
@@ -65,7 +65,7 @@ public class Main {
             }
             quit = in.nextInt();
             while (quit<0||quit>2) {
-                System.out.println("Ошибка. Введите число 0 или 1.");
+                System.out.println("Ошибка. Введите число от нуля до двух.");
                 while (!in.hasNextInt()) {
                     System.out.println("Ошибка. Неверный ввод. Введите целое число.");
                     in.next();
